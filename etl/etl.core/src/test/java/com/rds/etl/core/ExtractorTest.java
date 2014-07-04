@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Gadi
  */
-public class Extract {
+public class ExtractorTest {
     
-    public Extract() {
+    public ExtractorTest() {
     }
     
     @BeforeClass
@@ -37,10 +37,18 @@ public class Extract {
     @After
     public void tearDown() {
     }
+    
+    @Test
+    public void canCreateExtractor() {
+        Extractor extractor = new Extractor();
+        assertNotNull(extractor);
+    }
 
     @Test
-    public void canCreateExtractor(){
+    public void canExtractDataFromSource() {
         Extractor extractor = new Extractor();
+        Object result = extractor.process();
+        assertNotNull(result);
     }
 
 }

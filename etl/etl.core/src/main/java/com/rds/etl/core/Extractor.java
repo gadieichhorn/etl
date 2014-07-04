@@ -11,5 +11,9 @@ package com.rds.etl.core;
  * @author Gadi
  */
 class Extractor {
+
+    Object process() {
+        return 1;
+    }
     
 }
