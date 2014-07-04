@@ -42,13 +42,13 @@ public class ExtractorTest {
     
     @Test
     public void canCreateExtractor() {
-        ServiceExtractor extractor = new ServiceExtractor();
+        RSSFeedExtractor extractor = new RSSFeedExtractor();
         assertNotNull(extractor);
     }
 
     @Test (expected = RuntimeException.class)
     public void cannotExtractDataFromSource() {
-        ServiceExtractor extractor = new ServiceExtractor();
+        RSSFeedExtractor extractor = new RSSFeedExtractor();
         Object result = extractor.process();
     }
     
@@ -61,13 +61,13 @@ public class ExtractorTest {
 
     @Test(expected = RuntimeException.class)
     public void  ExtractDataFromServiceSource() {
-        Extractor instance = new ServiceExtractor();
+        Extractor instance = new RSSFeedExtractor();
         instance.process();
     }    
 
     @Test
     public void  ExtractDataFromServiceSourceWithURL() {
-        Extractor instance = new ServiceExtractor("http://apps.shareholder.com/rss/rss.aspx?channels=632&companyid=YHOO&sh_auth=3301454858%2E0%2E0%2E41825%2E640c0b4a5876873d9e17af039237cd42");
+        Extractor instance = new RSSFeedExtractor("http://apps.shareholder.com/rss/rss.aspx?channels=632&companyid=YHOO&sh_auth=3301454858%2E0%2E0%2E41825%2E640c0b4a5876873d9e17af039237cd42");
         assertFalse(instance.process().isEmpty());
         assertTrue(instance.process().startsWith("<rss"));
     }    

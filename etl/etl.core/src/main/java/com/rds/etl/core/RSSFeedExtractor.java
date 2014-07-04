@@ -14,16 +14,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author Gadi
  */
-class ServiceExtractor implements Extractor {
+class RSSFeedExtractor implements Extractor {
 
     private String url;
-    private static final Logger logger = LoggerFactory.getLogger(ServiceExtractor.class);
+    private static final Logger logger = LoggerFactory.getLogger(RSSFeedExtractor.class);
 
-    public ServiceExtractor(String url) {
+    public RSSFeedExtractor(String url) {
         this.url = url;
     }
 
-    ServiceExtractor() {
+    RSSFeedExtractor() {
     }
 
     @Override
